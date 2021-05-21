@@ -33,6 +33,8 @@ if (debug === 'yes') {
   console.log('Workflow Title: ' + workflow_title);
   console.log('Build Number: ' + build_number);
   console.log('Build URL: ' + build_url);
+  console.log('Commit message: ' + commit_message);
+  console.log('Git tag: ' + git_tag);
 }
 
 function capitalize(text) {
