@@ -14,6 +14,9 @@ const build_number = process.env.BITRISE_BUILD_NUMBER;
 const build_url = process.env.BITRISE_BUILD_URL || 'https://bitrise.io';
 const build_date = new Date().toISOString();
 const git_branch = process.env.BITRISE_GIT_BRANCH;
+const commit_message = process.env.BITRISE_GIT_MESSAGE;
+const git_tag = process.env.BITRISE_GIT_TAG;
+
 
 // testing parameters
 if (debug == null || webhook_url == null || preset_status == null) {
@@ -94,13 +97,13 @@ axios
             inline: true
           },
           {
-            name: 'Workflow',
-            value: workflow_title,
+            name: 'Tag',
+            value: git_tag,
             inline: true
           },
           {
-            name: 'Branch',
-            value: git_branch,
+            name: 'Commit message',
+            value: commit_message,
             inline: true
           }
         ],
